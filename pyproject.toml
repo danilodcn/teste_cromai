@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "template_python_project"
+name = "test_cromai"
 version = "0.1.0"
 description = ""
 authors = ["Danilo Nascimento <daconnas.dcn@gmail.com>"]

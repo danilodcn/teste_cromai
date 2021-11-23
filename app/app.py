@@ -1,5 +1,9 @@
 from os import getpid
 from time import sleep
+from rich.console import Console
+
+
+console = Console()
 
 
 def program(time: float, file_name: str) -> None:
@@ -8,7 +12,7 @@ def program(time: float, file_name: str) -> None:
         file.write(str(pid))
 
         for _ in range(3):
-            print("2: I am alive")
+            console.print("[bold]2[/bold]: I am alive")
             sleep(time)
 
-        print("2: I gonna die now, bye")
+        console.print("[bold]2[/bold]: I gonna die now, bye")
