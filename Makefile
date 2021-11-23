@@ -27,7 +27,7 @@ help:
 tests: ## run the tests
 	${POETRY} pytest ${TEST_TARGET} -v
 coverage: ## run the coverage of tests
-	${POETRY} pytest --cov=. --cov-report=html  ${TEST_TARGET} -v
+	${POETRY} pytest --cov=./app --cov-report=html  ${TEST_TARGET} -v
 
 ## @ analitics
 .PHONY: lint_black flake mypy lint_isort analitics
