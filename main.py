@@ -1,4 +1,4 @@
-from app.fib import fib
+from app.app import program
 
 
-print(fib(30))
+program(1, "pid")
