@@ -25,7 +25,7 @@ help:
 ## @ tests
 .PHONY: tests coverage
 tests: ## run the tests
-	${POETRY} pytest ${TEST_TARGET} -v
+	${POETRY} python -m unittest discover ${TEST_TARGET} -v
 coverage: ## run the coverage of tests
 	${POETRY} pytest --cov=./app --cov-report=html  ${TEST_TARGET} -v
 
