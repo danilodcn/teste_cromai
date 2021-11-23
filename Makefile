@@ -23,11 +23,14 @@ help:
 	@${POETRY} python help.py
 
 ## @ tests
-.PHONY: tests coverage
+.PHONY: tests coverage stats
 tests: ## run the tests
 	${POETRY} python -m unittest discover ${TEST_TARGET} -v
 coverage: ## run the coverage of tests
-	${POETRY} pytest --cov=./app --cov-report=html  ${TEST_TARGET} -v
+	${POETRY} coverage run --source=app -m unittest discover -s tests -v
+stats: coverage ## run coverage and show the stats for coverage
+	${POETRY} coverage report
+	${POETRY} coverage html
 
 ## @ analitics
 .PHONY: lint_black flake mypy lint_isort analitics
