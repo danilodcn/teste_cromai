@@ -16,7 +16,7 @@ install:  install-deps install-deps-dev
 ## @ run
 .PHONY: run
 run: ## run the application
-	${POETRY} python main.py
+	bash app/app.sh 1000 pid
 
 .PHONY: help
 help:
