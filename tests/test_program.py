@@ -1,6 +1,7 @@
-from unittest import TestCase
 from contextlib import redirect_stdout
 from io import StringIO
+from unittest import TestCase
+
 from app import app
 
 
@@ -18,15 +19,16 @@ class TestProgram(TestCase):
             2,
             "number of function arguments is not equal to 2",
         )
+
     def test_if_output_is_right(self):
 
         s = StringIO()
         with redirect_stdout(s):
-            app.program(time=.3, file_name='pid')
-        
-        output_list = s.getvalue().strip().split('\n')
-        print(output_list)
-        for line in output_list[:-1]:
-            self.assertIn('I am alive', line)
+            app.program(time=0.3, file_name="pid")
 
-        self.assertIn('I gonna die now, bye', output_list[-1])
+        output_list = s.getvalue().strip().split("\n")
+
+        for line in output_list[:-1]:
+            self.assertIn("I am alive", line)
+
+        self.assertIn("I gonna die now, bye", output_list[-1])
