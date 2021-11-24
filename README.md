@@ -30,3 +30,8 @@ A aplicação consiste em:
 5) e, se não, deve mostrar a mensagem `1: It is dead` e rodar o programa em python.
 
 O código dessa aplicação está no arquivo [app/app.sh](./app/app.sh).
+
+Temos duas observações importantes a serem expostas:
+
+1) como pode ser observado no diagrama, o programa em shell script executa a aplicação em python em background. Na descrição original não possui essa informação, mas sem essa condição nunca existirá uma aplicação rodando com o mesmo PID que foi salvo no arquivo.
+2) A cada iteração o programa espera um tempo antes de ler e ler o arquivo `pid` e realizar a verificação se existe um processo com o PID. Isso pode ser explicado pelo problema de Thead Safe: A aplicação em shell script ler o arquivo antes da aplicação em python salvar. Isso faz com que o processo python seja executado várias vezes, causando bugs. 
