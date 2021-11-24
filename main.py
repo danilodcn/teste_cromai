@@ -1,4 +1,14 @@
 from app.app import program
+import os, sys
 
+_, time, filename = sys.argv
 
-program(1, "pid")
+file = 'pid'
+try:
+    program(float(time), filename)
+
+except KeyError:
+    if os.path.isfile(file):
+        os.remove(file)
+    
+    raise KeyboardInterrupt("exit")

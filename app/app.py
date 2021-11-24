@@ -10,6 +10,7 @@ console = Console()
 def program(time: float, file_name: str) -> None:
     with open(file_name, "w") as file:
         pid = getpid()
+        # print(f"python PID {pid}")
         file.write(str(pid))
 
         for _ in range(3):
