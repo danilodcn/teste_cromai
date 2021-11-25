@@ -5,6 +5,8 @@
   - 1.2. [Aplicação em Shell Script](#AplicaoemShellScript)
 - 2. [Comandos úteis](#Comandosteis)
   - 2.1. [help](#help)
+  - 2.2. [install](#install)
+  - 2.3. [cobertura de testes](#coberturadetestes)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -80,7 +82,7 @@ A imagem abaixo mostra a saída do comando `help` no terminal.
 
 ![make help image](https://imgur.com/4c7kA8n.png)
 
-### install
+### 2.2. <a name='install'></a>install
 
 Usado para instalar todas as dependencias para produção ou para desenvolvimento.
 
@@ -94,4 +96,18 @@ Para instalar as dependências de produção usamos o comando:
 
 ```
 $ make install
+```
+
+### 2.3. <a name='coberturadetestes'></a>cobertura de testes
+
+para verificar a cobertura de testes podemos usar o comando:
+
+```
+$ make stats
+```
+
+Com esse comando o programa vai executar todos os testes e depois criar um report no terminal. Se quiser ver os resultados no navegador pode usar o comando:
+
+```
+$ make html
 ```
