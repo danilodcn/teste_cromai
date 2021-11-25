@@ -78,7 +78,7 @@ $ make help
 
 A imagem abaixo mostra a saída do comando `help` no terminal.
 
-![make help image](./images/make-help.png)
+![make help image](https://imgur.com/4c7kA8n.png)
 
 ### install
 

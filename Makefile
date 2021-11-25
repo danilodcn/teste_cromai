@@ -5,7 +5,7 @@ ISORT_FLAGS=--profile=black --lines-after-imports=2
 
 ## @ install
 .PHONY: install-deps install-deps-dev
-install:	## install all product dependences
+install:	## install all production dependences
 	poetry install --no-dev
 
 install-dev: ## install all developement dependences
