@@ -17,3 +17,5 @@ with open("./Makefile", "r") as file:
                 target = target.split(":")[0].strip()
                 description = description.strip().capitalize()
                 console.print(f"  - [bold]{target}[/bold]: {description}")
+
+print()
