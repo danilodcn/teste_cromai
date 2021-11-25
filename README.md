@@ -76,4 +76,22 @@ Esse comando exibe na tela todos os comandos existentes no arquivo `Makefile`. P
 $ make help
 ```
 
+A imagem abaixo mostra a saída do comando `help` no terminal.
 
+![make help image](./images/make-help.png)
+
+### install
+
+Usado para instalar todas as dependencias para produção ou para desenvolvimento.
+
+Para instalar as dependências de desenvolvimento usamos o comando:
+
+```
+$ make install-dev
+```
+
+Para instalar as dependências de produção usamos o comando:
+
+```
+$ make install
+```
