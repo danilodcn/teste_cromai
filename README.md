@@ -1,30 +1,28 @@
 <!-- vscode-markdown-toc -->
 
-## Sumário
-
-- 1 [Teste Cromai ✅](#TesteCromai)
-  - 1.1. [Descrição das aplicações](#Descriodasaplicaes)
-    - 1.1.1. [Aplicação em Python](#AplicaoemPython)
-    - 1.1.2. [Aplicação em Shell Script](#AplicaoemShellScript)
-  - 1.2. [Rodando a Aplicação](#RodandoaAplicao)
+- 1. [Descrição das aplicações](#Descriodasaplicaes)
+  - 1.1. [Aplicação em Python](#AplicaoemPython)
+  - 1.2. [Aplicação em Shell Script](#AplicaoemShellScript)
+- 2. [Comandos úteis](#Comandosteis)
+  - 2.1. [help](#help)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-## 1. <a name='TesteCromai'></a>Teste Cromai ✅
+<!-- /vscode-markdown-toc --><!-- vscode-markdown-toc -->
 
 ---
 
+# 1. <a name='TesteCromai'></a>Teste Cromai ✅
+
 O teste consiste em criar uma aplicação constituída de duas partes. Cada uma dessas mini aplicações foi criada usando uma linguagem diferente: python e shell script. Para entender melhor a natureza do problema, foi criado um diagrama, o qual é apresentado abaixo.
 
-![diagrama](./diagram/cromai.png)
+![diagrama](./images/cromai.png)
 
-### 1.1. <a name='Descriodasaplicaes'></a>Descrição das aplicações
+## 1. <a name='Descriodasaplicaes'></a>Descrição das aplicações
 
-#### 1.1.1. <a name='AplicaoemPython'></a>Aplicação em Python
+### 1.1. <a name='AplicaoemPython'></a>Aplicação em Python
 
 A aplicação consiste em:
 
@@ -35,7 +33,7 @@ A aplicação consiste em:
 
 O código dessa aplicação está no arquivo [app/app.py](./app/app.py).
 
-#### 1.1.2. <a name='AplicaoemShellScript'></a>Aplicação em Shell Script
+### 1.2. <a name='AplicaoemShellScript'></a>Aplicação em Shell Script
 
 A aplicação consiste em:
 
@@ -52,6 +50,30 @@ Temos duas observações importantes a serem expostas:
 1. como pode ser observado no diagrama, o programa em shell script executa a aplicação em python em background. Na descrição original não possui essa informação, mas sem essa condição nunca existirá uma aplicação rodando com o mesmo PID que foi salvo no arquivo.
 2. A cada iteração o programa espera um tempo antes de ler e ler o arquivo `pid` e realizar a verificação se existe um processo com o PID. Isso pode ser explicado pelo problema de Thead Safe: A aplicação em shell script ler o arquivo antes da aplicação em python salvar. Isso faz com que o processo python seja executado várias vezes, causando bugs.
 
-### 1.2. <a name='RodandoaAplicao'></a>Rodando a Aplicação
+# 2. <a name='RodandoaAplicao'></a>Rodando a Aplicação
 
-Para facilitar na execução de comandos foi criado um arquivo [Makefile](./Makefile) na raiz no projeto. Como dependência precisamos instalar duas libs: [poetry]() e [make]()
+Para facilitar na execução de comandos foi criado um arquivo [Makefile](./Makefile) na raiz no projeto. Como dependência precisamos instalar duas libs: [poetry]() e [make](https://www.gnu.org/software/make/)
+
+O poetry é um gerenciador de dependencias do python. Podemos instala-lo usando o comando:
+
+```
+$ pip install poetry
+```
+
+Make é uma ferramenta que controla a geração de executáveis e não executáveis através de arquivos fonte do programa. Ele facilita a vida do desenvolver ao passo de que para gerar builds completas ou outros comandos complexos não é necessário possuir conhecimento profundo dos detalhes de implementação. Basta adicionar os comandos em um arquivo `Makefile` e pronto! Para usá-lo podemos instalar o meta pacote [build essential](https://pimylifeup.com/ubuntu-build-essential/) usando o comando abaixo:
+
+```
+$ apt install build-essential
+```
+
+## 2. <a name='Comandosteis'></a>Comandos úteis
+
+### 2.1. <a name='help'></a>help
+
+Esse comando exibe na tela todos os comandos existentes no arquivo `Makefile`. Para tanto basta rodar o comando a seguir no terminal.
+
+```
+$ make help
+```
+
+
