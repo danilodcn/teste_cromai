@@ -30,6 +30,8 @@ coverage: ## run the coverage of tests
 stats: coverage ## run coverage and show the stats for coverage
 	${POETRY} coverage report
 	${POETRY} coverage html
+html: ## view html page of resuls in browser
+	xdg-open htmlcov/index.html 
 
 ## @ analitics
 .PHONY: lint_black flake mypy lint_isort analitics
